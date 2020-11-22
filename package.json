@@ -1,6 +1,9 @@
 {
   "name": "utility_be",
   "version": "1.0.0",
+  "engines": {
+    "node": "6.11.1"
+  },
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -31,9 +34,5 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "mongoose": "^5.10.15"
-  },
-  "engines": {
-    "node": "12.18.2",
-    "npm": "6.14.5"
   }
 }
