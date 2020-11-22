@@ -10,7 +10,7 @@ const fetchProducts = ({ sortby, price }) => {
     ])
     .then((products) => {
       if (!products) {
-        return Promise.reject({ status: 404, msg: "no products found" });
+        return Promise.reject({ status: 404, msg: "Sorry no products were found found" });
       }
       return products;
     });
