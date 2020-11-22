@@ -25,10 +25,12 @@ app.use(express.json());
 app.listen(PORT, () => {
     console.log("Listening on port 3000......")
 })
-
-
 app.use("/api", apiRouter)
 
+app.use((err, req, res, next) => {
+  // console.log(err);
+  res.status(err.status).send({ msg: err.msg });
+});
 
 
 module.exports = app
