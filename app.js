@@ -4,10 +4,11 @@ const cors = require("cors");
 const db_connection = require('./db_connection');
 const apiRouter = require('./routers/apiRouter');
 
-app.use(cors());
 
 // express app
 const app = express();
+
+app.use(cors());
 
 //Connect to mondoDB using mongoose
 mongoose
@@ -27,7 +28,14 @@ app.use(express.json());
 app.listen(PORT, () => {
     console.log("Listening on port 3000......")
 })
+
+
 app.use("/api", apiRouter)
+
+app.use("/", (req, res) => {
+  res.send("Route Does Not Exist")
+})
+
 
 app.use((err, req, res, next) => {
   res.status(err.status).send({ msg: err.msg });
