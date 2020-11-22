@@ -29,5 +29,8 @@
     "chai-sorted": "^0.2.0",
     "dotenv": "^8.2.0",
     "mongoose": "^5.10.15"
+  },
+  "engines": {
+    "node": "12.18.2"
   }
 }

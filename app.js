@@ -15,13 +15,14 @@ mongoose
     console.log(err);
   });
 
+const PORT = process.env.PORT || 3000;
 
 // Recognizes incoming request object as a JSON object
 app.use(express.json());
 
 
 // Listening for incoming requests
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Listening on port 3000......")
 })
 
