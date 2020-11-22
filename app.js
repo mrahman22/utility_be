@@ -1,8 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const db_connection = require('./db_connection');
 const apiRouter = require('./routers/apiRouter');
 
+app.use(cors());
 
 // express app
 const app = express();
@@ -28,7 +30,6 @@ app.listen(PORT, () => {
 app.use("/api", apiRouter)
 
 app.use((err, req, res, next) => {
-  // console.log(err);
   res.status(err.status).send({ msg: err.msg });
 });
 
